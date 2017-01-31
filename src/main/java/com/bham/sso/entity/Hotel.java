@@ -9,19 +9,11 @@ public class Hotel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue
 	private Long id;
-
-	@Column(nullable = false)
 	private String name;
-
-	@Column(nullable = false)
 	private String address;
-
-	@Column(nullable = false)
 	private String zip;
-
-	@Version
 	private Long version;
 
 	public Hotel() {
