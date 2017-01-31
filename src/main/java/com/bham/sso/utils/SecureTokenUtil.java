@@ -21,7 +21,11 @@ import com.bham.sso.utils.encryptUtils.AESUtils;
  */
 public class SecureTokenUtil {
 
-	
+	private static final String IV = "F27D5C9927726BCEFE7510B1BDD3D137";
+    private static final String SALT = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
+    private static final int KEY_SIZE = 128;
+    private static final int ITERATION_COUNT = 10000;
+    private static final String PASSPHRASE = "the quick brown fox jumps over the lazy dog";
 	/**
 	 * 
 	 * @param userId
@@ -54,7 +58,9 @@ public class SecureTokenUtil {
 		/*byte[] data = sb.toString().getBytes();
 		byte[] encodedData = RSAUtils.encryptByPrivateKey(data, privateKey);
 		return new String(Base64.encodeBase64(encodedData)); */
-		String encryptResult = AESUtils.encryptAES(sb.toString(), "****");  
+		//String encryptResult = AESUtils.encryptAES(sb.toString(), "****");  
+		AESUtils util = new AESUtils(KEY_SIZE, ITERATION_COUNT);
+        String encryptResult = util.encrypt(SALT, IV, PASSPHRASE, sb.toString());
 		//String encryptResultStr = AESUtils.parseByte2HexStr(encryptResult);
         return encryptResult;
 	}
@@ -77,7 +83,9 @@ public class SecureTokenUtil {
 		//String outputStr = new String(decodedData);
 		//return outputStr;
 	    //byte[] decryptFrom = AESUtils.parseHexStr2Byte(ltapToken);  
-	    String decryptResult = AESUtils.decryptAES(ltapToken, "****");  
+	    //String decryptResult = AESUtils.decryptAES(ltapToken, "****");  
+	    AESUtils util = new AESUtils(KEY_SIZE, ITERATION_COUNT);
+        String decryptResult = util.decrypt(SALT, IV, PASSPHRASE, ltapToken);
 	    return decryptResult;
 	}
 	
