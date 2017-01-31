@@ -9,9 +9,14 @@
 */
 package com.bham.sso.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.bham.sso.entity.Person;
 import com.bham.sso.repository.PersonRepository;
@@ -27,12 +32,23 @@ import com.bham.sso.repository.PersonRepository;
 */
 @RestController
 public class IndexController {
-	   @Autowired
-	    private PersonRepository repository;
-
+	@Autowired
+	private PersonRepository repository;
+	
 	    @RequestMapping("/")
-	    public String home() {
-	        Person p = this.repository.findAll().iterator().next();
-	        return "Hello " + p.getName() + "!";
-	    }
+	public String home() {
+	    Person p = this.repository.findAll().iterator().next();
+	    return "Hello " + p.getName() + "!";
+	}
+	
+	@RequestMapping("/index.action")
+	public ModelAndView index(HttpServletRequest request,HttpServletResponse response){
+	     ModelAndView mv = new ModelAndView("/index/index");
+	     return mv;
+	}
+	 @RequestMapping(value ="/register.action",method =RequestMethod.GET)
+	public ModelAndView register(HttpServletRequest request,HttpServletResponse response){
+	     ModelAndView mv = new ModelAndView("/register/register","command","success");
+	     return mv;
+	}
 }
