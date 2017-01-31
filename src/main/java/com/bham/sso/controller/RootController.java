@@ -1,16 +1,19 @@
 package com.bham.sso.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The only purpose of this root controller is to redirect the user on root context 
- * access to the right home page
  * 
- * @author Biju Kunjummen
- *
+* <p>Title: RootController.java</p>
+* <p>Description: </p>
+* <p>Copyright: Copyright (c) 2017</p>
+* <p>Company: UOB</p>
+* @author RuJia
+* @date 2017年1月31日
+* @version 1.0
  */
-@Controller
+@RestController
 public class RootController {
 	@RequestMapping("/")
 	public String onRootAccess() {
