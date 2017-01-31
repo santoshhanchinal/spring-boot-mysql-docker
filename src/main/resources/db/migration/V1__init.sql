@@ -13,7 +13,7 @@ CREATE TABLE hotel (
 	name varchar(255) NOT NULL,
 	address varchar(255) NOT NULL,
 	zip varchar(255) NOT NULL,
-	version varchar(255) NOT NULL,
+	version BIGINT NOT NULL,
 	PRIMARY KEY (id)
 );
 
