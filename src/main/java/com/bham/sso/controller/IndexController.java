@@ -37,8 +37,8 @@ public class IndexController {
 	
 	@RequestMapping("/test")
 	public String home() {
-	    Person p = this.repository.findAll().iterator().next();
-	    return "Hello " + p.getName() + "test";
+	    //Person p = this.repository.findAll().iterator().next();
+	    return "/index/index.jsp";
 	}
 	
 	@RequestMapping("/")
@@ -47,12 +47,12 @@ public class IndexController {
 	    return "Hello " + p.getName() + "!!!!!!!!!!!!!!!!";
 	}
 	
-	@RequestMapping("/index.action")
+	@RequestMapping("/index")
 	public ModelAndView index(HttpServletRequest request,HttpServletResponse response){
 	     ModelAndView mv = new ModelAndView("/index/index");
 	     return mv;
 	}
-	 @RequestMapping(value ="/register.action",method =RequestMethod.GET)
+	 @RequestMapping(value ="/register",method =RequestMethod.GET)
 	public ModelAndView register(HttpServletRequest request,HttpServletResponse response){
 	     ModelAndView mv = new ModelAndView("/register/register","command","success");
 	     return mv;
