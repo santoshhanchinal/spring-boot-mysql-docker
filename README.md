@@ -36,7 +36,7 @@ docker run --name demo-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=d
 ```
 docker logs demo-mysql
 ```
-<img src="https://rjgeek.github.io/images/2017/01/spring-boot-docker-2.png?t=1>" width = "85%" height = "65%" alt="图片名称" align=center />
+![](https://rjgeek.github.io/images/2017/01/spring-boot-docker-2.png)    
 And you can access the server by localhost:3307/demo,the database instance is "demo", the user is "demo_user" and the password is "demo_pass".
 
 ### 4.Maven package and demo application docker build:
