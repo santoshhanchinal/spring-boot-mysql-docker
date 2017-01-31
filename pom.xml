@@ -29,7 +29,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.bham.sso.StartApplication</start-class>
-        <docker.image.prefix>jiwhiz</docker.image.prefix>
+        <docker.image.prefix>ehcoo</docker.image.prefix>
     </properties>
 
 	<dependencies>
