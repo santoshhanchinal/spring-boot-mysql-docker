@@ -10,7 +10,7 @@
     <groupId>com.bham</groupId>
     <artifactId>spring-boot-docker-mysql</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
 
     <name>Spring Boot Docker MySQL Sample</name>
