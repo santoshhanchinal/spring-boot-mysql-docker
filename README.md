@@ -1,13 +1,4 @@
----
-title: 【Docker】Spring Boot Docker MySQL Demo
-tags:
-  - Docker
-id: 375
-categories:
-  - Docker
-date: 2017-01-31 22:02:09
-keywords: Spring,Docker，MySQL
----
+# Spring Boot MySQL Docker Demo
 
 ## Introduction
 Since this is the first time for me to use spring-boot project running in the docker with MySQL database, I use a lot of Yuan Ji's work for reference. you can also read his [web page](https://www.jiwhiz.com/blogs/Spring_Boot_Docker_MySQL_Demo) directly.  
