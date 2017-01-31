@@ -1,5 +1,5 @@
 FROM java:8
 VOLUME /tmp
-ADD demo.war demo.war
-RUN bash -c 'touch /demo.war'
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-war","/demo.war"]
+ADD demo.jar demo.jar
+RUN bash -c 'touch /demo.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/demo.jar"]
