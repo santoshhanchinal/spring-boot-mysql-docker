@@ -38,7 +38,7 @@ public class IndexController {
 	    @RequestMapping("/")
 	public String home() {
 	    Person p = this.repository.findAll().iterator().next();
-	    return "Hello " + p.getName() + "!";
+	    return "Hello " + p.getName() + "!!!!!!!!!!!!!!!!";
 	}
 	
 	@RequestMapping("/index.action")
