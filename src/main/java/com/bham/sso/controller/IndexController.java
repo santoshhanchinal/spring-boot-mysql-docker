@@ -35,8 +35,14 @@ public class IndexController {
 	@Autowired
 	private PersonRepository repository;
 	
-	    @RequestMapping("/")
+	@RequestMapping("/test")
 	public String home() {
+	    Person p = this.repository.findAll().iterator().next();
+	    return "Hello " + p.getName() + "test";
+	}
+	
+	@RequestMapping("/")
+	public String home1() {
 	    Person p = this.repository.findAll().iterator().next();
 	    return "Hello " + p.getName() + "!!!!!!!!!!!!!!!!";
 	}
