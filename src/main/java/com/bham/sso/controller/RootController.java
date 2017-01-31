@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RootController {
 	@RequestMapping("/")
 	public String onRootAccess() {
-		return "redirect:/hotels";
+		  return "Hello Docker World."
+	                + "<br />Welcome to <a href='http://www.ehcoo.com'>ehcoo.com</a></li>";
 	}
 }

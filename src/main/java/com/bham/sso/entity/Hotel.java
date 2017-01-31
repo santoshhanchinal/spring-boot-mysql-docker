@@ -61,7 +61,12 @@ public class Hotel implements Serializable {
 
 	public void setVersion(Long version) {
 		this.version = version;
+	}
+
+	@Override
+	public String toString() {
+		return "Hotel [id=" + id + ", name=" + name + ", address=" + address + ", zip=" + zip + ", version=" + version
+				+ "]";
 	}	
-	
 	
 }

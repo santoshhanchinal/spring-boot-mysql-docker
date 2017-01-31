@@ -9,9 +9,11 @@
 */
 package com.bham.sso.controller;
 
+import java.util.Iterator;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.bham.sso.entity.Person;
 import com.bham.sso.repository.PersonRepository;
@@ -25,16 +27,20 @@ import com.bham.sso.repository.PersonRepository;
 * @date 2017年1月31日
 * @version 1.0
 */
-@RestController
+@Controller
+@RequestMapping("/person")
 public class PersonController {
 	@Autowired
 	private PersonRepository repository;
 	
-	
-	@RequestMapping("/person")
-	public String person() {
+	@RequestMapping("/list")
+	public String list() {
 	    Person p = this.repository.findAll().iterator().next();
-	    return "Hello " + p.getName() + "!!!!!!!!!!!!!!!!";
+	    StringBuilder sb = new StringBuilder();
+	    Iterator<Person> ip = this.repository.findAll().iterator();
+	    while(ip.hasNext()){
+	    	sb.append(ip.next());
+	    }
+	    return sb.toString();
 	}
-	
 }
