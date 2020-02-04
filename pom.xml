@@ -12,7 +12,6 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-
     <name>Spring Boot Docker MySQL Sample</name>
     <organization>
 		<name>Rujia</name>
